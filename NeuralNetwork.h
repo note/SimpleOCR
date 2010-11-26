@@ -1,4 +1,36 @@
-/*#include <iostream>
+/*#include <vector>
+
+class IncorrectArguments{};
+
+template <class T>
+struct Neuron : public vector<T>{
+    T output;
+    
+    Neuron();
+    void setSize(int size);
+    void computeOutput(vector<Neuron> & inputs);
+    T static sigmoidal(T val);
+};
+
+template <class T>
+struct NeuronsLayer : public vector<Neuron<T> >{
+    void setSize(int size, int prevSize);
+    void computeOutputs(NeuronsLayer<T> & prev);
+};
+
+template <class T>
+struct NeuralNetwork : public vector<NeuronsLayer<T> >{
+    //First parameter specifies how many layers network will contain. Second is vector with sizes of each layer (so vector size must equal layersNumber)
+    NeuralNetwork(int layersNumber, vector<int> sizes) throw(IncorrectArguments);
+    
+    //set outputs of first layer neurons (first layer outputs are really inputs when we constider the whole NeuralNetwork consisted of a few layers.
+    //size of inputs must match size of first layer
+    void setInputValues(vector<T> & inputs) throw(IncorrectArguments);
+    void compute();
+    void printResult();
+};
+*/
+#include <iostream>
 #include <vector>
 using namespace std;
 
@@ -76,4 +108,4 @@ struct NeuralNetwork : public vector<NeuronsLayer<T> >{
 	for(int i=0, sz=lastLayer.size(); i<sz; ++i)
 	    cout << lastLayer.at(i).output << endl;
     }
-};*/
+};
