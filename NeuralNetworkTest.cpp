@@ -1,5 +1,6 @@
 #include "NeuralNetwork.h"
 
+using namespace NN;
 int main(){
     vector<int> v;
     v.push_back(2);
