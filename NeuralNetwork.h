@@ -54,7 +54,7 @@ namespace NN{
 	}
 
         void update(vector<Neuron> & prev, T learningRate){
-            for(int i=0; i<this->size(); ++i)
+            for(size_t i=0; i<this->size(); ++i)
                 this->at(i) += learningRate*error*sigmoidal(output)*(1-sigmoidal(output))*prev[i].output;
         }
     };
